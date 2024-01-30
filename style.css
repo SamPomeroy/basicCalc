@@ -19,21 +19,18 @@ body{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
 }
-/* .six{
-    grid-row: 1/5;
-    grid-column: 5;
-} */
 #equal{
     grid-row: 2 / -1;
-    /* grid-row-end: 5; */
     grid-column: 4;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: rgb(116, 23, 23);
     height: auto;
     
 }
+/* .operator{
+    color: rgb(120, 120, 171);
+} */
 .calculator{
     border: 1px solid #717377;
     padding: 20px;
@@ -51,9 +48,10 @@ input{
     font-size: 40px;
     text-align: right;
     cursor: pointer;
+    color: whitesmoke;
 }
 input::placeholder{
-    color: #ffffff
+    color: whitesmoke
 }
 button{
     border: none;
@@ -61,8 +59,8 @@ button{
     height: 60px;
     margin: 10px;
     border-radius: 20%;
-    background: transparent;
-    color: #ffffff;
+    background: grey;
+    color: whitesmoke;
     font-size: 20px;
     box-shadow: -8px -8px 15px rgba(255, 255, 255 0.1);
     cursor: pointer;
