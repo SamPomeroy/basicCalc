@@ -1,8 +1,8 @@
 let input = document.getElementById('inputBox');
 let buttons = document.querySelectorAll('button');
 
-// if(string.indexOf['/0'] != -1){
-//     string = 'error'
+// if(string.indexOf('/0') != -1){
+//     string = undefined
 // }
 
 let string ='';
@@ -18,9 +18,7 @@ arr.forEach(button => {
             if(count === 2 && secondCount <= 2){
                 string = eval(string)
                 input.value = string
-                if(string.indexOf['/0'] != -1){
-                    string = undefined
-                }
+                
                 count=1
             }
             else if(count === 2 && secondCount > 2){
@@ -34,9 +32,7 @@ arr.forEach(button => {
         if(e.target.innerHTML === '='){
             string = eval(string);
             input.value = string;
-            if(string.indexOf['/0'] != -1){
-                string = undefined
-            }
+            
         }
 
         else if(e.target.innerHTML === 'C'){
@@ -51,3 +47,50 @@ arr.forEach(button => {
     })
     
 })
+//////////////////////////////////////////////////
+//let input = document.getElementById("inputBox");
+// let buttons = document.querySelectorAll("button");
+// let expression = "";
+// let operatorCount = 0;
+// buttons.forEach((button) => {
+//   button.addEventListener("click", (e) => {
+//     let value = e.target.innerHTML;
+//     if (value === "+" || value === "-" || value === "*" || value === "/") {
+//       operatorCount++;
+//       if (operatorCount === 2) {
+//         expression = evaluate(expression);
+//         input.value = expression;
+//         operatorCount = 1;
+//       }
+//     }
+//     if (value === "=") {
+//       expression = evaluate(expression);
+//       input.value = expression;
+//     }
+//     else if (value === "C") {
+//       expression = "";
+//       input.value = expression;
+//     }
+//     else if (value === "←") {
+//       expression = expression.slice(0, -1);
+//       input.value = expression;
+//     }
+//     else {
+//       expression += value;
+//       input.value = expression;
+//     }
+//   });
+// });
+// function evaluate(expression) {
+//   if (!expression || isNaN(expression)) {
+//     return "";
+//   }
+//   if (expression.includes("/0")) {
+//     return "Cannot divide by zero";
+//   }
+//   try {
+//     return Math.round(Math.eval(expression) * 100) / 100;
+//   } catch (error) {
+//     return "Invalid expression";
+//   }
+// }
