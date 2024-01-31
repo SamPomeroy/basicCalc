@@ -15,13 +15,15 @@ arr.forEach(button => {
             secondCount++
             if(count === 2 && secondCount <= 2){
                 result = eval(result)
-                input.value = result
+                input.value = parseFloat(result.toFixed(6))
                 count=1
+                return
             }
             else if(count === 2 && secondCount > 2){
                 result  = eval(result)
-                input.value = result
+                input.value = parseFloat(result.toFixed(6))
                 count=1
+                return
 
             }
             // console.log(count)
@@ -38,8 +40,9 @@ arr.forEach(button => {
             input.value = result;
         }
         else{
+            
             result += e.target.innerHTML;
-            input.value = result;
+            input.value = result
         }
         
     
