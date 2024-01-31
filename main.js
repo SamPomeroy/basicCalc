@@ -1,50 +1,61 @@
 let input = document.getElementById('inputBox');
 let buttons = document.querySelectorAll('button');
 
-// if(string.indexOf('/0') != -1){
-//     string = undefined
+// if(result.indexOf('/0') != -1){
+//     result = undefined
+// }
+// function evaluate(expression) {
+//       if (expression.includes("/0")) {
+//       return "Cannot divide by zero";
+//       } else {
+//         return expression
+//       }
 // }
 
-let string ='';
+let result ='';
 let arr = Array.from(buttons);
 let count = 0;
 let operators = document.querySelectorAll('.operator')
 let secondCount = 0;
+// let answer = Number(result)
+
 arr.forEach(button => {
     button.addEventListener('click', (e) =>{
         if(e.target.innerHTML === '+' || e.target.innerHTML === '-' || e.target.innerHTML === '*' || e.target.innerHTML === '/'){
             count++
             secondCount++
             if(count === 2 && secondCount <= 2){
-                string = eval(string)
-                input.value = string
-                
+                result = eval(result)
+                input.value = parseFloat(result.toFixed(6))
                 count=1
             }
             else if(count === 2 && secondCount > 2){
-                string = eval(string)
-                input.value = string
+                result  = eval(result)
+                input.value = parseFloat(result.toFixed(6))
                 count=1
 
             }
-            console.log(count)
+            // console.log(count)
         }
         if(e.target.innerHTML === '='){
-            string = eval(string);
-            input.value = string;
+            result = eval(result);
+            input.value = parseFloat(result.toFixed(6))
+            // result = Number(result)
             
         }
 
         else if(e.target.innerHTML === 'C'){
-            string = '';
-            input.value = string;
+            result = '';
+            input.value = result;
         }
         else{
-            string += e.target.innerHTML;
-            input.value = string;
+            result += e.target.innerHTML;
+            input.value = result;
         }
         
+    
     })
+    
     
 })
 //////////////////////////////////////////////////
@@ -81,6 +92,7 @@ arr.forEach(button => {
 //     }
 //   });
 // });
+
 // function evaluate(expression) {
 //   if (!expression || isNaN(expression)) {
 //     return "";
