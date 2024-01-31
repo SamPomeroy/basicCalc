@@ -1,6 +1,7 @@
 let input = document.getElementById('inputBox');
 let buttons = document.querySelectorAll('button');
 
+
 let result ='';
 let arr = Array.from(buttons);
 let count = 0;
@@ -14,12 +15,12 @@ arr.forEach(button => {
             secondCount++
             if(count === 2 && secondCount <= 2){
                 result = eval(result)
-                input.value = parseFloat(result.toFixed(6))
+                input.value = result
                 count=1
             }
             else if(count === 2 && secondCount > 2){
                 result  = eval(result)
-                input.value = parseFloat(result.toFixed(6))
+                input.value = result
                 count=1
 
             }
@@ -31,6 +32,7 @@ arr.forEach(button => {
             // result = Number(result)
             
         }
+
         else if(e.target.innerHTML === 'C'){
             result = '';
             input.value = result;
@@ -39,5 +41,9 @@ arr.forEach(button => {
             result += e.target.innerHTML;
             input.value = result;
         }
+        
+    
     })
+    
+    
 })
